@@ -1,0 +1,299 @@
+<Avocado>:
+    problem: _problem
+    AnchorLayout:
+        anchor_x: 'center'
+        anchor_y: 'top'
+        ScreenManager:
+            id: manager
+            Screen:
+                name: 'landing'
+                FloatLayout:
+                    canvas.before:
+                        Color:
+                            rgb: (0.952941176   ,0.949019608,0.933333333)
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+
+                    Label:
+                        font_name: 'SkarpaLt.ttf'
+                        color: (0,0,0, 1)
+                        pos_hint: {'x': 0, 'y': 0.4}
+                        text: 'Newtonly'
+                        font_size: '75dp'
+
+                    Label:
+                        color: (0,0,0, 1)
+                        pos_hint: {'x': 0, 'y': 0.3}
+                        text: 'Pocket professor'
+                        font_size: '15dp'
+
+                    Image:
+                        source: 'logo.png'
+                        pos_hint: {'x': 0.1, 'y': 0.1}
+                        size_hint: (0.8, 0.8)
+                        allow_stretch: True
+
+                    Button:
+                        size_hint: (1, 0.1)
+                        pos_hint: {'x': 0, 'y': 0}
+                        text: 'Get started'
+                        on_release: manager.current = 'augmentation'
+
+            Screen:
+                name: 'augmentation'
+                FloatLayout:
+                    canvas.before:
+                        Color:
+                            rgb: (0.952941176   ,0.949019608,0.933333333)
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+
+                GridLayout:
+                    size_hint_x: 1
+                    size_hint_y: 1
+                    rows:2
+                    TextInput:
+                        id: _problem
+                        hint_text: 'Input your related rates problem here!'
+                Button:
+                    size_hint: (1,0.1)
+                    pos_hint: {'x': 0, 'y': 0}
+                    text: "Get help!"                   
+                    on_press: print(str(_problem.text))
+                    on_press: root.solver(str(_problem.text),'ladder')
+                    on_release: manager.current = 'illustrate'
+            Screen:
+                name: 'illustrate'
+                FloatLayout:
+                    canvas.before:
+                        Color:
+                            rgb: (0.952941176   ,0.949019608,0.933333333)
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+
+                GridLayout:
+                    size_hint_x: 1
+                    size_hint_y: 1
+                    rows:2
+                    Image:
+                        source: 'image.png'
+
+                Label:
+                    color: (0,0,0, 1)
+                    pos_hint: {'x': 0, 'y': 0.4}
+                    font_size: '25dp'
+                    text: root.solution1
+                Button:
+                    size_hint: (1,0.1)
+                    pos_hint: {'x': 0, 'y': 0}
+                    text: "Next step >>"                   
+                    on_press: manager.current= 'illustrate2'
+
+            Screen:
+                name: 'illustrate2'
+                FloatLayout:
+                    canvas.before:
+                        Color:
+                            rgb: (0.952941176   ,0.949019608,0.933333333)
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                GridLayout:
+                    size_hint_x: 1
+                    size_hint_y: 1
+                    rows:2
+                    Image:
+                        source: 'image2.png'
+ 
+                Label:
+                    color: (0,0,0, 1)
+                    pos_hint: {'x': 0, 'y': 0.4}
+                    font_size: '25dp'
+                    text: root.solution2
+ 
+                Label:
+                    color: (0,0,0, 1)
+                    pos_hint: {'x': 0.25, 'y': -0.27}
+                    font_size: '25dp'
+                    text: root.dy
+
+                Button:
+                    size_hint: (1,0.1)
+                    pos_hint: {'x': 0, 'y': 0}
+                    text: "Next step >>"                   
+                    on_press: manager.current='illustrate3'
+
+            Screen:
+                name: 'illustrate3'
+                FloatLayout:
+                    canvas.before:
+                        Color:
+                            rgb: (0.952941176   ,0.949019608,0.933333333)
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                GridLayout:
+                    size_hint_x: 1
+                    size_hint_y: 1
+                    rows:2
+                    Image:
+                        source: 'image2.png'
+ 
+                Label:
+                    color: (0,0,0, 1)
+                    pos_hint: {'x': 0, 'y': 0.4}
+                    font_size: '25dp'
+                    text: root.solution3
+ 
+                Label:
+                    color: (0,0,0, 1)
+                    pos_hint: {'x': 0.25, 'y': -0.27}
+                    font_size: '25dp'
+                    text: root.dy
+ 
+                Button:
+                    size_hint: (1,0.1)
+                    pos_hint: {'x': 0, 'y': 0}
+                    text: "Next step >>"                   
+                    on_press: manager.current='illustrate4'
+
+
+            Screen:
+                name: 'illustrate4'
+                FloatLayout:
+                    canvas.before:
+                        Color:
+                            rgb: (0.952941176   ,0.949019608,0.933333333)
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                GridLayout:
+                    size_hint_x: 1
+                    size_hint_y: 1
+                    rows:2
+                    Image:
+                        source: 'image2.png'
+ 
+                Label:
+                    color: (0,0,0, 1)
+                    pos_hint: {'x': 0, 'y': 0.4}
+                    font_size: '25dp'
+                    text: root.solution4
+ 
+                Label:
+                    color: (0,0,0, 1)
+                    pos_hint: {'x': 0.25, 'y': -0.27}
+                    font_size: '25dp'
+                    text: root.dy
+ 
+                Button:
+                    size_hint: (1,0.1)
+                    pos_hint: {'x': 0, 'y': 0}
+                    text: "Next step >>"                   
+                    on_press: manager.current = 'illustrate5'
+
+
+            Screen:
+                name: 'illustrate5'
+                FloatLayout:
+                    canvas.before:
+                        Color:
+                            rgb: (0.952941176   ,0.949019608,0.933333333)
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                GridLayout:
+                    size_hint_x: 1
+                    size_hint_y: 1
+                    rows:2
+                    Image:
+                        source: 'image2.png'
+ 
+                Label:
+                    color: (0,0,0, 1)
+                    pos_hint: {'x': 0, 'y': 0.4}
+                    font_size: '25dp'
+                    text: root.solution5
+ 
+                Label:
+                    color: (0,0,0, 1)
+                    pos_hint: {'x': 0.25, 'y': -0.27}
+                    font_size: '25dp'
+                    text: root.dy
+ 
+                Button:
+                    size_hint: (1,0.1)
+                    pos_hint: {'x': 0, 'y': 0}
+                    text: "Next step >>"                   
+                    on_press: manager.current = 'illustrate6'
+
+            Screen:
+                name: 'illustrate6'
+                FloatLayout:
+                    canvas.before:
+                        Color:
+                            rgb: (0.952941176   ,0.949019608,0.933333333)
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                GridLayout:
+                    size_hint_x: 1
+                    size_hint_y: 1
+                    rows:2
+                    Image:
+                        source: 'image2.png'
+ 
+                Label:
+                    color: (0,0,0, 1)
+                    pos_hint: {'x': 0, 'y': 0.4}
+                    font_size: '25dp'
+                    text: root.solution6
+ 
+                Label:
+                    color: (0,0,0, 1)
+                    pos_hint: {'x': 0.25, 'y': -0.27}
+                    font_size: '25dp'
+                    text: root.dy
+ 
+                Button:
+                    size_hint: (1,0.1)
+                    pos_hint: {'x': 0, 'y': 0}
+                    text: "Next step >>"                   
+                    on_press: manager.current = 'illustrate7'
+
+            Screen:
+                name: 'illustrate7'
+                FloatLayout:
+                    canvas.before:
+                        Color:
+                            rgb: (0.952941176   ,0.949019608,0.933333333)
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                GridLayout:
+                    size_hint_x: 1
+                    size_hint_y: 1
+                    rows:2
+                    Image:
+                        source: 'image2.png'
+ 
+                Label:
+                    color: (0,0,0, 1)
+                    pos_hint: {'x': 0, 'y': 0.4}
+                    font_size: '25dp'
+                    text: root.solution7
+ 
+                Label:
+                    color: (0,0,0, 1)
+                    pos_hint: {'x': 0.25, 'y': -0.27}
+                    font_size: '25dp'
+                    text: root.dy
+ 
+                Button:
+                    size_hint: (1,0.1)
+                    pos_hint: {'x': 0, 'y': 0}
+                    text: "Done!>>"                   
+                    on_press: manager.current='landing'
